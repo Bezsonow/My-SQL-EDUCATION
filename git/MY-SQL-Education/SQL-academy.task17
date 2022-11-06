@@ -1,0 +1,15 @@
+Определить, сколько потратил в 2005 году каждый из членов семьи
+Поля в результирующей таблице:member_name,status,costs
+Используйте конструкцию "as costs" для отображения затраченной суммы членом семьи. Это необходимо для корректной проверки.
+
+Решение1.
+SELECT member_name,status,SUM(unit_price*amount) as costs from FamilyMembers
+JOIN Payments ON FamilyMembers.member_id = Payments.family_member
+WHERE date like '2005%'
+GROUP BY member_name,status;
+
+Решение2.
+SELECT member_name,status,SUM(unit_price*amount) as costs from FamilyMembers
+JOIN Payments ON FamilyMembers.member_id = Payments.family_member
+WHERE Year(date)=2005
+GROUP BY member_name,status;
