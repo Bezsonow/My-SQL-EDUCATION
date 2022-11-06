@@ -1,0 +1,9 @@
+Вывести пассажиров с самым длинным именем
+Поля в результирующей таблице:name
+
+Решение:
+SELECT name FROM Passenger
+WHERE LENGTH(name) = (SELECT MAX(LENGTH(name)) FROM Passenger);
+
+Примечание:
+функция LENGTH возвращает длину указанной строки (измеряется в байтах).
