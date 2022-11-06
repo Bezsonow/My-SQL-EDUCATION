@@ -1,0 +1,6 @@
+Вывести все названия самолётов, на которых можно улететь в Москву (Moscow)
+Поля в результирующей таблице:plane
+
+Решение:
+SELECT DISTINCT (plane) from Trip
+WHERE town_to = 'Moscow';
