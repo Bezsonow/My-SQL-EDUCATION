@@ -1,0 +1,6 @@
+Какие компании организуют перелеты с Владивостока (Vladivostok)?
+Поля в результирующей таблице:name
+Решение:
+SELECT name FROM Company
+JOIN Trip on Company.id = Trip.company
+WHERE town_from = 'Vladivostok';
